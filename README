@@ -1,4 +1,26 @@
 Simple program to add license header to code files.
 
-Right now it supports Java and XML files, and Apache v2 and GPL v3
-licenses
+Right now it supports Java and XML files, and Apache v2 and GPL v3 licenses.
+
+= Requirements =
+
+It is only necessary to have Python installed:
+ * Python >= 2.6
+
+= Running the program =
+
+Just execute:
+
+python addlicense.py DIR -l LICENSE
+
+This will add the license header to all the files in DIR.
+LICENSE can be one of: 'apache2', 'gpl3'.
+
+If nothing else is passed on the command line, some values of the license
+header will be auto-completed. In particular: the year of the copyright
+will be set to the current year, the copyright holder will be set to the
+current user name, and the email will be left blank.
+
+For more information on the program, type:
+
+python addlicense.py -h
