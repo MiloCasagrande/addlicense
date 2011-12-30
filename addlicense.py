@@ -30,8 +30,7 @@ __email__ = "milo@ubuntu.com"
 
 
 included_files = []
-excluded_dirs = ['frontend', 'servers', 'WebContent', 'tools', 'doc', \
-                 'reputation']
+excluded_dirs = []
 
 cmd_options = {'year': '', 'holder': '', 'holder_email': '', 'license': '', \
                'verbose': False}
