@@ -21,7 +21,7 @@ import shutil
 import tempfile
 from licenses import javalicenses
 
-java_license_pattern = re.compile("^\/\*\s*\*\s*[Copyright]\s*")
+java_license_pattern = re.compile("^\/\*\s*\*\s*(Copyright)\s*")
 
 
 def parse(arg, cmd_options):
@@ -29,7 +29,7 @@ def parse(arg, cmd_options):
     with open(arg, 'r') as read_file:
         # check if we already have the license header
         license_lines = ""
-        for i in range(4):
+        for _i in range(4):
             license_lines += read_file.readline()
 
         if java_license_pattern.match(license_lines):

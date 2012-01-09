@@ -18,8 +18,8 @@
 import re
 import javaparser
 import pythonparser
+import phpparser
 import xmlparser
-
 
 java_pattern = re.compile('\.java$')
 php_pattern = re.compile('\.php$')
@@ -37,6 +37,8 @@ def _parse_file(arg, cmd_options):
         xmlparser.parse(arg, cmd_options)
     elif python_pattern.search(arg) != None:
         pythonparser.parse(arg, cmd_options)
+    elif php_pattern.search(arg) != None:
+        phpparser.parse(arg, cmd_options)
 
 
 def parse(arg, cmd_options):

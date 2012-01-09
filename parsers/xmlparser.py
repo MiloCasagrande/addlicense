@@ -22,7 +22,7 @@ import tempfile
 from licenses import xmllicenses
 
 xml_def_pattern = re.compile("^\<\?[xml]\s*")
-xml_license_pattern = re.compile("\<!--\s*[Copyright]\s*")
+xml_license_pattern = re.compile("\<!--\s*(Copyright)\s*")
 
 
 def parse(arg, cmd_options):
@@ -30,7 +30,7 @@ def parse(arg, cmd_options):
     with open(arg, 'r') as read_file:
         # check if we already have the license header
         license_lines = ""
-        for i in range(4):
+        for _i in range(4):
             license_lines += read_file.readline()
 
         if xml_license_pattern.search(license_lines):
